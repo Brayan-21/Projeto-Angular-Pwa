@@ -31,7 +31,8 @@
     {
       "name": "pokemons-api",
       "urls": [
-        "https://pokeapi.co/api/v2"
+        "https://pokeapi.co/api/v2/*",
+        "http://localhost:9000/*"
       ],
       "cacheConfig": {
         "strategy": "performance",

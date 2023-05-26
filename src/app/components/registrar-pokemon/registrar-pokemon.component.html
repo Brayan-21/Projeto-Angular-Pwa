@@ -1,33 +1,31 @@
-<form>
-  <div class="card">
+<div class="card">
     <div class="card-body">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-3 pb-1">
           <label for="" class="form-label">Pokemon</label>
-          <select class="form-select" aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example" [(ngModel)]="registroPokemon.nome" [ngModelOptions]="{standalone: true}">
             <option *ngFor="let item of pokemons" [value]="item.nome">{{item.nome}}</option>
           </select>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-3 pb-1">
           <label for="" class="form-label">Apelido</label>
-          <input type="text" class="form-control" placeholder="Digite um nome...">
+          <input type="text" class="form-control" placeholder="Digite um nome..." [(ngModel)]="registroPokemon.apelido" [ngModelOptions]="{standalone: true}">
         </div>
         <div class="col-sm-12 col-md-12 col-lg-3 pb-1">
           <label for="" class="form-label">Ginásio</label>
-          <input type="text" class="form-control" placeholder="Digite um nome...">
+          <input type="text" class="form-control" placeholder="Digite um nome..." [(ngModel)]="registroPokemon.ginasio" [ngModelOptions]="{standalone: true}">
         </div>
         <div class="col-sm-12 col-md-12 col-lg-3">
           <label for="" class="form-label">Grupo</label>
-          <input type="text" class="form-control" placeholder="Digite um nome...">
+          <input type="text" class="form-control" placeholder="Digite um nome..." [(ngModel)]="registroPokemon.grupo" [ngModelOptions]="{standalone: true}">
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
-          <button type="button" class="btn btn-success">Registrar Pokemon</button>
+          <button type="button" class="btn btn-success" (click)="registrarPokemon()">Registrar Pokemon</button>
         </div>
       </div>
     </div>
-  </div>
-</form>
+</div>
 
 

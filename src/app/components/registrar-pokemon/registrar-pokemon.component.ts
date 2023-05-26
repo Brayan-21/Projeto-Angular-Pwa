@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { Pokemon } from '../models/pokemon';
+import { RegistrosDePokemonsService } from 'src/app/services/registros-de-pokemons.service';
+import { RegistroPokemon } from '../models/registro-pokemon';
 
 @Component({
   selector: 'app-registrar-pokemon',
@@ -10,9 +12,11 @@ import { Pokemon } from '../models/pokemon';
 export class RegistrarPokemonComponent implements OnInit {
 
   public pokemons: Pokemon[] = new Array<Pokemon>();
+  public registroPokemon: RegistroPokemon = new RegistroPokemon();
 
   constructor(
-    private apiPokemon: PokemonService
+    private apiPokemon: PokemonService,
+    private apiRegistroPokemon: RegistrosDePokemonsService,
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +27,10 @@ export class RegistrarPokemonComponent implements OnInit {
     this.apiPokemon.getPokemons().subscribe(res =>{
       this.pokemons = res;
     });
+  }
+
+  public registrarPokemon(){
+    this.apiRegistroPokemon.registrarPokemon(this.registroPokemon);
   }
 
 }

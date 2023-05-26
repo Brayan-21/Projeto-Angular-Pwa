@@ -1,1 +1,31 @@
-<p>listar-pokemons-registrados works!</p>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 pb-1 d-flex flex-wrap">
+        <div class="card largura-fixa mr-1 mb-1" *ngFor="let item of listaRegistroPokemons">
+          <div class="card-body d-flex flex-column">
+            <span>
+              <strong>Nome: </strong>{{item.nome}}
+            </span>
+            <span>
+              <strong>Apelido: </strong>{{item.apelido}}
+            </span>
+            <span>
+              <strong>Ginásio: </strong>{{item.ginasio}}
+            </span>
+            <span>
+              <strong>Grupo: </strong>{{item.grupo}}
+            </span>
+          </div>
+        </div>
+        <ng-container *ngIf="listaRegistroPokemons.length == 0">
+          <div class="d-flex justify-content-center">
+            <strong>Nenhum Registro Encontrado...</strong>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+
